@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoira</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> <!-- Roboto Font -->
+</head>
+<body>
+    <h1>Flashcard App</h1>
+    <div class="container">
+        <div class="term">
+            <h3>Term</h3>
+            <input type="text" id="termText" required>
+        </div>
+        <div class="definition">
+            <h3>Definition</h3>
+            <input type="text" id="definitionText" required>
+        </div>
+        <button onclick="handleClick()">Add Term</button>
+    </div>
+    <button onclick="createCards()">Create Flashcards</button>
+    <div id="test" class="termSide">
+    </div>
+    <button class="prevButton" onclick="prevCard()">Previous Card</button>
+    <button onclick="nextCard()">Next card</button>
+    <a href="index.html">Go to Main Page</a>
+
+</body>
+</html>

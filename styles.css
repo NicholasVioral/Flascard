@@ -1,0 +1,36 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.term {
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 100px;
+}
+
+.definition {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.prevButton {
+    margin-top: 20px;
+}
+
+.termSide {
+    color: Purple;
+    font-size: 24px;
+    padding: 200px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    margin-right: 1400px;
+    cursor: pointer;
+}
+
+
+
+a { /* Removing underline from anchor tag */
+    text-decoration: none;
+    color: green;
+}
