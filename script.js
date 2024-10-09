@@ -1,8 +1,9 @@
 // What should happen is that you click the add term and it gets saved temporarily and then when you click create set it will show your
 // Flashcards one at a time where you can go forwards and backwards
 
-const flashcards = [];
-let iter = 0;
+const flashcards = JSON.parse(localStorage.getItem("flashcards")) || [];
+let iter = flashcards.length; // Set iter to the current length of the flashcards array
+let iter2 = 0;
 
 function handleClick() {
     term = document.getElementById("termText").value;
@@ -11,6 +12,7 @@ function handleClick() {
         alert("Must enter term and defintion to add card!");
     }
     flashcards.push({ term: term, definition, definition })
+    localStorage.setItem("flashcards", JSON.stringify(flashcards));
     document.getElementById("termText").value='';
     document.getElementById("definitionText").value='';
     console.log("Flashcard saved:", flashcards[iter]);
@@ -20,6 +22,7 @@ function handleClick() {
 let currentCard = 0;
 
 function createCards(){
+    document.getElementById("test").innerHTML = ""; // Clear previous content
     const terms = document.createElement("p"); // Creating an element out of nowhere
     const node = document.createTextNode(flashcards[currentCard].term); // Creating a text node to add to the element previously created
 
@@ -80,7 +83,6 @@ function prevCard() {
     }
 }
 
-
 function oppositeSideTerm(definitions, terms) {
     definitions.style.display = "block";
     terms.style.display = "none";
@@ -89,4 +91,50 @@ function oppositeSideTerm(definitions, terms) {
 function oppositeSideDefinition(definitions, terms) {
     definitions.style.display = "none";
     terms.style.display = "block";
+}
+
+if (flashcards.length > 0) {
+    createCards();
+}
+
+function clearCards() {
+    flashcards.length = 0;
+    document.getElementById("test").innerHTML = "";
+}
+
+
+// How to get term and definition out of flashcard array
+// for (let i in flashcards) {
+//     const flashcard = flashcards[i];
+//     console.log(`Term: ${flashcard.term}, Definition: ${flashcard.definition}`)
+// }
+
+
+// Need to save the definition to the answer so that when the user clicks the button it sees if it matches
+function generateTest() {
+
+    let flashcardMap = new Map();
+
+    flashcards.forEach(flashcard => {
+        flashcardMap.set(flashcard.term, flashcard.definition);
+    });
+
+    const def = document.createElement("p");
+    const text = document.createTextNode(flashcards[iter2].term);
+    def.append(text);
+    locationDef = document.getElementById("test-location");
+    locationDef.appendChild(def);
+
+    for (let i in flashcards) {
+        const flashcard = flashcards[i];
+        console.log(`Term: ${flashcard.term}, Definition: ${flashcard.definition}`)
+
+        const terms = document.createElement("button"); // Creating an element out of nowhere
+        const node = document.createTextNode(flashcard.definition); // Creating a text node to add to the element previously created
+        terms.appendChild(node); // Appending the text node to the paragraph node
+
+        testLocation = document.getElementById("test-location");
+        testLocation.appendChild(terms);
+    }
+    iter2++;
 }

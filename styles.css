@@ -1,36 +1,130 @@
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .term {
-    margin-bottom: 10px;
-    display: inline-block;
-    margin-right: 100px;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-right: 100px;
 }
 
 .definition {
-    margin-bottom: 10px;
-    display: inline-block;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 .prevButton {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .termSide {
-    color: Purple;
-    font-size: 24px;
-    padding: 200px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-    margin-right: 1400px;
-    cursor: pointer;
+  color: purple;
+  font-size: 24px;
+  width: 400px; /* Fixed width */
+  height: 300px; /* Fixed height */
+  padding: 20px; /* Adjusted padding */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center; /* Center text inside the box */
 }
 
-
-
-a { /* Removing underline from anchor tag */
-    text-decoration: none;
-    color: green;
+.navbar .signin {
+  margin-left: auto;
 }
+
+/* General body styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* Light background */
+}
+
+/* Navigation styles */
+.navbar {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Header styles */
+header {
+  background-color: #552173; /* Purple background */
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+header p {
+  font-size: 1.25rem;
+}
+
+/* Options Section */
+section {
+  padding: 40px 0;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.col-lg-4 {
+  flex: 1;
+  max-width: 200px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.25rem;
+  background-color: #552173; /* Purple background for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #764ba2; /* Lighter purple on hover */
+}
+
+/* Footer styles */
+footer {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+a {
+  text-decoration: none;
+  color: green;
+}
+
